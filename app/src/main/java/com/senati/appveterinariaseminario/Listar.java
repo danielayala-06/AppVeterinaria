@@ -25,11 +25,16 @@ import java.util.ArrayList;
 
 public class Listar extends AppCompatActivity {
     ListView lstMascotas;
+    /**
+     * dirección del endPoint donde recuperaremos todos los registros de las mascotas
+     */
     private final String URL = "http://192.168.0.107:3000/mascotas"; // constante
 
     RequestQueue requestQueue; //Cola de pedido
 
-
+    /**
+     * Este metodo carga los componentes graficos
+     */
     private void loadIU(){
         lstMascotas = findViewById(R.id.lstMascotas);
     }
@@ -47,12 +52,14 @@ public class Listar extends AppCompatActivity {
         getData();
     }
 
+    /**
+     * Este método obtiene los datos de las tabla y los guarda en un ArrayJSON
+     */
     private void getData() {
         // 1.- Habilitar el canal de comuniciacion
         requestQueue = Volley.newRequestQueue(this);// Usamos this y no getAplicationcontext() porque es una orden de alto nivel
 
-        // 2.- Que tipo de dato espero obtener?
-        //Opciones => Objeto JSON, Arrgelom text, Binario(.jpg) RPT: ARRAY JSON
+        // 2.- Obtenemos los datos de las tablas en un Array JSON
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET,
                 URL,
@@ -75,6 +82,10 @@ public class Listar extends AppCompatActivity {
         requestQueue.add(jsonArrayRequest);
     }
 
+    /**
+     * Cargamos los datos obtenidos al componente ListView
+     * @param mascotas
+     */
     private void renderData(JSONArray mascotas) {
         try {
             ArrayAdapter arrayAdapter;

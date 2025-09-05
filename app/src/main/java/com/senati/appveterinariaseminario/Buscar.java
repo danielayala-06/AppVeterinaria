@@ -32,7 +32,7 @@ public class Buscar extends AppCompatActivity {
 
     private final String URL = "http://192.168.0.107:3000/mascotas/";
     RequestQueue requestQueue; //Cola de pedido
-    
+
     private void loadIU(){
         edtId = findViewById(R.id.edtIdEditar);
         edtNombre = findViewById(R.id.edtNombreEditar);
@@ -77,6 +77,9 @@ public class Buscar extends AppCompatActivity {
         });
     }
 
+    /**
+     * Abre un cuadro de dialogo para confirmar la actualización
+     */
     private void confirmUpdate() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setTitle("Mantenimiento de Mascotas");
@@ -93,6 +96,9 @@ public class Buscar extends AppCompatActivity {
         dialog.show();
     }
 
+    /**
+     * Envia un objeto JSON con los datos actualizados
+     */
     private void updateMascota() {
         requestQueue = Volley.newRequestQueue(this);
 
@@ -130,6 +136,9 @@ public class Buscar extends AppCompatActivity {
         requestQueue.add(jsonObjectRequest);
     }
 
+    /**
+     * Busca una mascta por su ID. En caso de encontrar la mascota llena los campos con los datos actuales de la mascota.
+     */
     private void searchById() {
         String idMascota = edtId.getText().toString().trim();
 
@@ -177,6 +186,10 @@ public class Buscar extends AppCompatActivity {
             requestQueue.add(jsonObjectRequest);
         }
     }
+
+    /**
+     * Limpia los campos del formulario
+     */
     private void formClear(){
         edtId.setText(null);
         edtNombre.setText(null);
@@ -186,27 +199,19 @@ public class Buscar extends AppCompatActivity {
         edtPeso.setText(null);
         edtGenero.setText(null);
     }
-    private void toogleButton(Button btn, boolean bool){btn.setEnabled(bool);}
-//    private JSONObject putDataJsonObject(EditText edt, JSONObject jsonObject, String name){
-//        try{
-//            return jsonObject.put(name, edt.getText().toString().trim());
-//        }catch (JSONException e){
-//            Log.e("Error en el JSON", e.toString());
-//            return jsonObject;
-//        }
-//    }
+
+    /**
+     * Devuelve el texto de un componente EditText
+     * @param edt
+     * @return String
+     */
     private String getEdtTextText(EditText edt){
         return edt.getText().toString().trim();
     }
-    private boolean editTextValidate(EditText editText, String message){
-        if(editText.getText().toString().trim().isEmpty()){
-            editText.setError(message);
-            editText.requestFocus();
-            return false;
-        }
-        return true;
-    }
 
+    /**
+     * Eliminamos una mascota por su id
+     */
     private void deleteMascota(){
         requestQueue = Volley.newRequestQueue(this);
 
@@ -232,6 +237,10 @@ public class Buscar extends AppCompatActivity {
         );
         requestQueue.add(jsonObjectRequest);
     }
+
+    /**
+     * Abre un dialogo para confirmar la eliminación de un registro.
+     */
     private void confirmDelete(){
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setTitle("Mantenimiento de Mascotas");
