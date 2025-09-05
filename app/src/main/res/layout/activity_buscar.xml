@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="40dp"
+    tools:context=".Buscar">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="10dp">
+        <EditText
+            android:textAlignment="center"
+            android:id="@+id/edtIdEditar"
+            android:fontFamily="@font/roboto_variable"
+            android:hint="id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="30dp"
+            android:inputType="number"
+            android:maxLength="3"/>
+        <Button
+            android:id="@+id/btnBuscarId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buscar"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:isScrollContainer="true"
+        android:layout_marginVertical="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edtNombreEditar"
+            android:fontFamily="@font/roboto_variable"
+            android:hint="Nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:fontFamily="@font/roboto_variable"
+            android:id="@+id/edtTipoEditar"
+            android:hint="Tipo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:fontFamily="@font/roboto_variable"
+            android:id="@+id/edtRazaEditar"
+            android:hint="Raza"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:fontFamily="@font/roboto_variable"
+            android:id="@+id/edtColorEditar"
+            android:hint="Color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:fontFamily="@font/roboto_variable"
+            android:id="@+id/edtPesoEditar"
+            android:inputType="numberDecimal"
+            android:hint="Peso"
+            android:maxLength="7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:fontFamily="@font/roboto_variable"
+            android:id="@+id/edtGeneroEditar"
+            android:hint="genero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnEliminar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Eliminar"/>
+
+    <Button
+        android:id="@+id/btnActualizar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Actualizar"/>
+
+</LinearLayout>

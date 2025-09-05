@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="40dp"
+    tools:context=".Registrar">
+
+    <TextView
+        android:textSize="20dp"
+        android:paddingBottom="20dp"
+        android:textAlignment="center"
+        android:text="Registrar"
+        android:fontFamily="@font/poppins_medio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:isScrollContainer="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edtNombre"
+            android:fontFamily="@font/roboto_variable"
+            android:hint="Nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:fontFamily="@font/roboto_variable"
+            android:id="@+id/edtTipo"
+            android:hint="Tipo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:fontFamily="@font/roboto_variable"
+            android:id="@+id/edtRaza"
+            android:hint="Raza"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:fontFamily="@font/roboto_variable"
+            android:id="@+id/edtColor"
+            android:hint="Color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:fontFamily="@font/roboto_variable"
+            android:id="@+id/edtPeso"
+            android:inputType="numberDecimal"
+            android:hint="Peso"
+            android:maxLength="7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:fontFamily="@font/roboto_variable"
+            android:id="@+id/edtGenero"
+            android:hint="genero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnGuardar"
+        android:text="Guardar"
+        android:layout_marginVertical="10dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:enabled="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
